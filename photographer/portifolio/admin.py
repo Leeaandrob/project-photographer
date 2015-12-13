@@ -1,3 +1,8 @@
+# coding: utf-8
 from django.contrib import admin
 
-# Register your models here.
+from .models import (Category, Album, Photo)
+
+admin.site.register(Category)
+admin.site.register(Album)
+admin.site.register(Photo)

@@ -1,0 +1,80 @@
+{%extends 'homesite/index.html'%}
+{%block content%}
+<!-- ===START CONTENT == -->
+<div class="content-holder elem scale-bg2 transition3 slid-hol">
+	<!--page title -->
+	<div class="fixed-title"><span>{{album.name}}</span></div>
+	<!--page title end -->
+	<!--=============== content ===============-->
+	<div class="content full-height">
+		<!--=============== description column  ===============-->
+		<div class="fixed-info-container">
+			<h3>{{album.name}}</h3>
+			<div class="separator"></div>
+			<div class="clearfix"></div>
+			<p>{{album.description}}</p>
+			<h4>Info</h4>
+			<ul class="project-details">
+				<li>
+					<i class="fa fa-bicycle"></i>
+					<div class="pd-holder">
+						<h5>Category :  <a href="#">{{album.category.name}}</a></h5>
+					</div>
+				</li>
+				<li>
+					<i class="fa fa-calendar"></i>
+					<div class="pd-holder">
+						<h5>Date :  <a href="#">{{album.created_at}}</a></h5>
+					</div>
+				</li>
+				<li>
+					<i class="fa fa-paw"></i>
+					<div class="pd-holder">
+						<h5>Client  :  <a href="#">{{album.client}}</a></h5>
+					</div>
+				</li>
+			</ul>
+			<div class="content-nav">
+				<ul>
+					<li><a href="portfolio-single2.html"><i class="fa fa-long-arrow-left"></i></a></li>
+					<li><span>/</span></li>
+					<li><a href="portfolio-single3.html"><i class="fa fa-long-arrow-right"></i></a></li>
+				</ul>
+			</div>
+		</div>
+		<!--description column end -->
+		<!-- portfolio  Images  -->
+		<div class="resize-carousel-holder vis-info">
+			<div class="swiper-container viom" id="horizontal-slider" data-mwc="1" data-mwa="0">
+				<div class="swiper-wrapper">
+					{%for photo in album.album_photos.all%}
+						<!--=============== 1 ===============-->
+						<div class="swiper-slide">
+							<div class="bg bg-slider" style="background-image:url({{photo.image.url}})"></div>
+							<div class="zoomimage"><img src="{{photo.image.url}}" class="intense" alt=""><i class="fa fa-expand"></i></div>
+							<div class="show-info">
+								<span>Info</span>
+								<div class="tooltip-info">
+									<h5>Nulla blandit</h5>
+									<p>Aat posuere sem accumsan nec. Sed non arcu non sem commodo ultricies. Sed non nisi viverra </p>
+								</div>
+							</div>
+						</div>
+						<!-- 1 end  -->
+					{%endfor%}
+				</div>
+				<div class="pagination"></div>
+			</div>
+			<!-- slider navigation  -->
+			<div class="swiper-nav-holder hor hs">
+				<a class="swiper-nav arrow-left transition " href="#"><i class="fa fa-angle-left"></i></a>
+				<a class="swiper-nav  arrow-right transition" href="#"><i class="fa fa-angle-right"></i></a>
+			</div>
+			<!-- slider navigation  end -->
+		</div>
+	</div>
+	<!-- Content end  -->
+
+
+
+	{%endblock%}
