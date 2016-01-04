@@ -1,0 +1,51 @@
+{% extends 'homesite/base.html' %}
+{% load staticfiles%}
+{% block content%}
+
+<div id="wrapper">
+<!--=============== content-holder ===============-->	
+<div class="content-holder elem scale-bg2 transition3" >
+	<!--=============== content ===============-->
+	<div class="content full-height">
+		<!--background -->	
+		<div class="full-height-wrap fixed-wrap">
+			<div class="bg" style="background-image:url({% static 'images/bg/59.jpg' %})"></div>
+			<div class="overlay"></div>
+		</div>
+		<!--background end-->
+		<!--custom-inner -->
+		<div class="custom-inner contact-inner">
+			<div class="container">
+				<h2>Contacts</h2>
+				<div class="separator"></div>
+				<div class="row">
+					<div class="col-md-4">
+						<p>{{body}}</p>
+						<ul class="contact-list">
+							<li><a href="#">{{company.company_adress}}</a></li>
+							<li><a href="#">{{company.telephone}}</a></li>
+							<li><a href="#">{{company.email}}</a></li>
+						</ul>
+					</div>
+					<div class="col-md-8">
+						<div id="contact-form">
+							<div id="message"></div>
+							{% csrf_token %}
+							<form method="POST" name="contactform" id="contactform">
+								{{form.as_p}}
+								<button class='send_message transition' type='submit'>
+								<input type="submit" class="send_message transition" id="submit" value="Send Message" />
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--custom-inner end-->                    
+	</div>
+	<!-- Share container  -->    
+	<div class="share-container  isShare"  data-share="['facebook','pinterest','googleplus','twitter','linkedin']"></div>
+</div>
+</div>
+<!-- content holder end -->
+{%endblock%}

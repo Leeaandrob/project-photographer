@@ -4,7 +4,6 @@
 <!-- ====START CONTENT===-->
 <div class="content-holder elem scale-bg2 transition3">
 	<!-- title -->
-	<div class="fixed-title"><span>Portfolio</span></div>
 	<!-- portfolio counter -->
 	<div class="count-folio">
 		<div class="num-album"></div>
@@ -40,7 +39,7 @@
 				<div class="gallery-item travel">
 					<div class="grid-item-holder">
 						<div class="box-item">
-							<a href="portfolio-single.html" >
+							<a href="{%url 'album' album.pk %}" >
 								<span class="overlay"></span> 
 								<img  src="{% static 'images/bg/1.jpg'%}"   alt="">
 							</a>
