@@ -1,6 +1,7 @@
 # coding: utf-8
-from django.contrib import messages
-from django.views.generic import (TemplateView, ListView, DetailView)
+from django.views.generic import (TemplateView, ListView, DetailView,
+                                  FormView)
+from django.core.urlresolvers import reverse_lazy
 
 from .forms import ContactForm
 from .models import (Home, AboutMe, Contact)
@@ -46,18 +47,17 @@ class AboutMeView(TemplateView):
         return context
 
 
-class ContactView(TemplateView):
+class ContactView(FormView):
     template_name = 'homesite/contact.html'
+    form_class = ContactForm
+    success_url = reverse_lazy('home')
 
     def get_context_data(self, **kwargs):
         context = super(ContactView, self).get_context_data(**kwargs)
-        context['form'] = ContactForm(self.request.POST or None)
         context['body'] = AboutMe.objects.first()
         context['company'] = Home.objects.first()
         return context
 
-    def post(self, request, *args, **kwargs):
-        context = self.get_context_data()
-        if context['form'].is_valid():
-            Contact.objects.create(**context['form'].cleaned_data)
-            messages.success(request, 'Cadastrado com sucesso')
+    def form_valid(self, form):
+        Contact.objects.create(**form.cleaned_data)
+        return super(ContactView, self).form_valid(form)

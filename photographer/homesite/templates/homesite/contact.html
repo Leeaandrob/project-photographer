@@ -1,7 +1,6 @@
 {% extends 'homesite/base.html' %}
 {% load staticfiles%}
 {% block content%}
-
 <div id="wrapper">
 <!--=============== content-holder ===============-->	
 <div class="content-holder elem scale-bg2 transition3" >
@@ -30,10 +29,9 @@
 					<div class="col-md-8">
 						<div id="contact-form">
 							<div id="message"></div>
-							{% csrf_token %}
-							<form method="POST" name="contactform" id="contactform">
+							<form method="POST" enctype="multipart/form-data">
+								{%csrf_token%}
 								{{form.as_p}}
-								<button class='send_message transition' type='submit'>
 								<input type="submit" class="send_message transition" id="submit" value="Send Message" />
 							</form>
 						</div>
