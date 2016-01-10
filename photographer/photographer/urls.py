@@ -11,8 +11,8 @@ from homesite.views import (HomesiteView, PortifolioListView,
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', HomesiteView.as_view(), name='home'),
-    url(r'about_me/', AboutMeView.as_view(), name='about_me'),
-    url(r'contact/', ContactView.as_view(), name='contact'),
+    url(r'^about_me/', AboutMeView.as_view(), name='about_me'),
+    url(r'^contact/', ContactView.as_view(), name='contact'),
     url(r'^portifolio/$', PortifolioListView.as_view(), name='portifolio'),
     url(r'^portifolio/(?P<pk>\d+)/$', AlbumDetailView.as_view(),
         name='album')
