@@ -1,72 +1,40 @@
-{%extends 'homesite/index.html'%}
+{%extends 'homesite/base.html'%}
+{%load staticfiles%}
 {%block content%}
-<!-- ===START CONTENT == -->
-<div class="content-holder elem scale-bg2 transition3 slid-hol">
-	<!--page title -->
-	<!--page title end -->
+<!--=============== content-holder ===============-->
+<div class="content-holder elem scale-bg2 transition3">
 	<!--=============== content ===============-->
 	<div class="content full-height">
-		<!--=============== description column  ===============-->
-		<div class="fixed-info-container">
-			<h3>{{album.name}}</h3>
-			<div class="separator"></div>
-			<div class="clearfix"></div>
-			<p>{{album.description}}</p>
-			<h4>Info</h4>
-			<ul class="project-details">
-				<li>
-					<i class="fa fa-bicycle"></i>
-					<div class="pd-holder">
-						<h5>Category :  <a href="#">{{album.category.name}}</a></h5>
-					</div>
-				</li>
-				<li>
-					<i class="fa fa-calendar"></i>
-					<div class="pd-holder">
-						<h5>Date :  <a href="#">{{album.created_at}}</a></h5>
-					</div>
-				</li>
-				<li>
-					<i class="fa fa-paw"></i>
-					<div class="pd-holder">
-						<h5>Client  :  <a href="#">{{album.client}}</a></h5>
-					</div>
-				</li>
-			</ul>
-		</div>
-		<!--description column end -->
 		<!-- portfolio  Images  -->
-		<div class="resize-carousel-holder vis-info">
-			<div class="swiper-container viom" id="horizontal-slider" data-mwc="1" data-mwa="0">
-				<div class="swiper-wrapper">
-					{%for photo in album.album_photos.all%}
-						<!--=============== 1 ===============-->
-						<div class="swiper-slide">
-							<div class="bg bg-slider" style="background-image:url({{photo.image.url}})"></div>
-							<div class="zoomimage"><img src="{{photo.image.url}}" class="intense" alt=""><i class="fa fa-expand"></i></div>
-							<div class="show-info">
-								<span>Info</span>
-								<div class="tooltip-info">
-									<h5>Nulla blandit</h5>
-									<p>Aat posuere sem accumsan nec. Sed non arcu non sem commodo ultricies. Sed non nisi viverra </p>
-								</div>
-							</div>
+		<div class="resize-carousel-holder anim-holder">
+			<div id="gallery_horizontal" class="gallery_horizontal">
+				{%for photo in album.album_photos.all%}
+				<!-- gallery Item-->
+				<div class="horizontal_item">
+					<img src="{{photo.image.url}}" alt="">
+					<div class="show-info">
+						<span>Info</span> 
+						<div class="tooltip-info">
+							<h5>Nulla blandit</h5>
+							<p>{{photo.description}}</p>
 						</div>
-						<!-- 1 end  -->
-					{%endfor%}
+					</div>
 				</div>
-				<div class="pagination"></div>
+				<!-- gallery item end-->
+				{%endfor%}
 			</div>
-			<!-- slider navigation  -->
-			<div class="swiper-nav-holder hor hs">
-				<a class="swiper-nav arrow-left transition " href="#"><i class="fa fa-angle-left"></i></a>
-				<a class="swiper-nav  arrow-right transition" href="#"><i class="fa fa-angle-right"></i></a>
+			<!--  navigation -->
+			<div class="customNavigation">
+				<a class="next-slide transition"><i class="fa fa-angle-right"></i></a>
+				<a class="prev-slide transition"><i class="fa fa-angle-left"></i></a>
 			</div>
-			<!-- slider navigation  end -->
+			<!--  navigation end-->
 		</div>
+		<!-- portfolio  Images  end-->
 	</div>
-	<!-- Content end  -->
-
-
-
-	{%endblock%}
+	<!-- Content end  -->  
+	<!-- Share container  -->    
+	<div class="share-container  isShare"  data-share="['facebook','pinterest','googleplus','twitter','linkedin']"></div>
+</div>
+<!-- content holder end -->
+{%endblock%}

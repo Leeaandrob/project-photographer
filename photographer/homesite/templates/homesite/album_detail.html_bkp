@@ -1,0 +1,70 @@
+{%extends 'homesite/base.html'%}
+{%load staticfiles%}
+{%block content%}
+
+            <div id="wrapper">
+            	<!--=============== content-holder ===============-->
+                <div class="content-holder elem scale-bg2 transition3">
+                      <!--=============== content ===============-->
+                    <div class="content full-height">
+                        <!-- portfolio  Images  -->
+                        <div class="resize-carousel-holder anim-holder">
+                            <div id="gallery_horizontal" class="gallery_horizontal">
+								<!-- gallery Item-->
+                                <div class="horizontal_item">
+                                    <img src="{% static 'images/bg/22.jpg' %}" alt="">
+                                    <div class="show-info">
+                                        <span>Info</span> 
+                                        <div class="tooltip-info">
+                                            <h5>Nulla blandit</h5>
+                                            <p>Aat posuere sem accumsan nec. Sed non arcu non sem commodo ultricies. Sed non nisi viverra </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- gallery item end-->
+                                <!-- gallery Item-->
+                                <div class="horizontal_item">
+                                    <div class="zoomimage"><img src="{% static 'images/bg/54.jpg' %}" class="intense" alt=""><i class="fa fa-expand"></i></div>
+                                    <img src="{% static 'images/bg/54.jpg' %}" alt="">
+                                    <div class="show-info">
+                                        <span>Info</span> 
+                                        <div class="tooltip-info">
+                                            <h5>Nulla blandit</h5>
+                                            <p>Aat posuere sem accumsan nec. Sed non arcu non sem commodo ultricies. Sed non nisi viverra </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- gallery item end-->
+                                <!-- gallery Item-->
+                                <div class="horizontal_item">
+                                    <div class="zoomimage"><img src="{% static 'images/bg/47.jpg' %}" class="intense" alt=""><i class="fa fa-expand"></i></div>
+                                    <img src="{% static 'images/bg/47.jpg' %}" alt="">
+                                    <div class="show-info">
+                                        <span>Info</span> 
+                                        <div class="tooltip-info">
+                                            <h5>Nulla blandit</h5>
+                                            <p>Aat posuere sem accumsan nec. Sed non arcu non sem commodo ultricies. Sed non nisi viverra </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- gallery item end-->
+                            </div>
+                            <!--  navigation -->
+                            <div class="customNavigation">
+                                <a class="next-slide transition"><i class="fa fa-angle-right"></i></a>
+                                <a class="prev-slide transition"><i class="fa fa-angle-left"></i></a>
+                            </div>
+                            <!--  navigation end-->
+                        </div>
+                        <!-- portfolio  Images  end-->
+                    </div>
+                    <!-- Content end  -->  
+                    <!-- Share container  -->    
+                    <div class="share-container  isShare"  data-share="['facebook','pinterest','googleplus','twitter','linkedin']"></div>
+                </div>
+                <!-- content holder end -->
+            </div>
+            <!-- wrapper end -->
+
+
+{%endblock%}

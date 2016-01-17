@@ -129,6 +129,7 @@ function initOutdoor() {
         pagination: true
     });
     $(".fullwidth-slider-holder a.next-slide").on("click", function() {
+		console.log('fooo');
         $(this).closest(".fullwidth-slider-holder").find(b).trigger("owl.next");
     });
     $(".fullwidth-slider-holder  a.prev-slide").on("click", function() {
@@ -177,6 +178,7 @@ function initOutdoor() {
         items: 1
     });
     $(".custom-slider-holder a.next-slide").on("click", function() {
+		console.log('fooo1');
         $(this).closest(".custom-slider-holder").find(customSlider).trigger("next.owl.carousel");
     });
     $(".custom-slider-holder a.prev-slide").on("click", function() {
@@ -204,6 +206,7 @@ function initOutdoor() {
         dots: true
     });
     $(".testimonials-slider-holder a.next-slide").on("click", function() {
+		console.log('foo2');
         $(this).closest(".testimonials-slider-holder").find(testiSlider).trigger("next.owl.carousel");
     });
     $(".testimonials-slider-holder a.prev-slide").on("click", function() {

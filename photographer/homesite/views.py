@@ -34,6 +34,11 @@ class AlbumDetailView(DetailView):
     context_object_name = 'album'
     template_name = 'homesite/album_detail.html'
 
+    def get_context_data(self, **kwargs):
+        context = super(AlbumDetailView, self).get_context_data(**kwargs)
+        context['home_information'] = Home.objects.first()
+        return context
+
 
 class AboutMeView(TemplateView):
     template_name = 'homesite/about_me.html'
