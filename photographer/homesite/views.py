@@ -14,7 +14,8 @@ class HomesiteView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super(HomesiteView, self).get_context_data(**kwargs)
         context['home_information'] = Home.objects.first()
-        context['photo'] = HomePicture.objects.first().image_home.url
+        if HomePicture.objects.first():
+            context['photo'] = HomePicture.objects.first().image_home.url
         return context
 
 
