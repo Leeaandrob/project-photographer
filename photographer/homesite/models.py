@@ -14,10 +14,15 @@ class Contact(models.Model):
 
 class AboutMe(models.Model):
     body = models.TextField()
+    picture = models.ImageField(upload_to='about_me')
 
 
 class HomePicture(models.Model):
     image_home = models.ImageField(upload_to='homesite/')
+
+
+class ContactPicture(models.Model):
+    picture = models.ImageField(upload_to='contact/')
 
 
 class Home(models.Model):

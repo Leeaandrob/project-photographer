@@ -4,7 +4,7 @@ from django.views.generic import (TemplateView, ListView, DetailView,
 from django.core.urlresolvers import reverse_lazy
 
 from .forms import ContactForm
-from .models import (Home, AboutMe, Contact, HomePicture)
+from .models import (Home, AboutMe, Contact, HomePicture, ContactPicture)
 from portifolio.models import Album
 
 
@@ -41,6 +41,7 @@ class AboutMeView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super(AboutMeView, self).get_context_data(**kwargs)
         context['body'] = AboutMe.objects.first()
+        context['image'] = AboutMe.objects.first().picture.url
         return context
 
 
@@ -53,6 +54,7 @@ class ContactView(FormView):
         context = super(ContactView, self).get_context_data(**kwargs)
         context['body'] = AboutMe.objects.first()
         context['company'] = Home.objects.first()
+        context['image'] = ContactPicture.objects.first().picture.url
         return context
 
     def form_valid(self, form):
