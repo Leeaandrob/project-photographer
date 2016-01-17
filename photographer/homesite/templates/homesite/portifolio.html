@@ -15,14 +15,10 @@
 		<section>
 			<div class="container">
 				<!--  portfolio header -->                     
-				<div class="content-logo">
-					<img src="{% static 'images/content-logo.png'%}" alt="">
-				</div>
-				<div class="separator separator-image"><img  src="{% static 'images/separator2.png'%}"   alt=""></div>
-				<h3 class="subtitle" style="color:#000;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. </h3>
+				<h2 class="subtitle" style="color:#000;">My Portfolio.</h2>
 				<!--  portfolio header end-->  
 				<!-- Filters-->
-				<div class="filter-holder inline-filters">
+				<div class="filter-holder">
 					<div class="gallery-filters">
 						{%for category in categorys%}
 							<a href="#" class="gallery-filter gallery-filter-active"  data-filter="*">All Albums</a>
@@ -41,7 +37,7 @@
 						<div class="box-item">
 							<a href="{%url 'album' album.pk %}" >
 								<span class="overlay"></span> 
-								<img  src="{% static 'images/bg/1.jpg'%}"   alt="">
+								<img  src="{{album.album_photos.all.0.image.url}}"   alt="">
 							</a>
 						</div>
 						<div class="grid-item ">

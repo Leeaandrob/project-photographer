@@ -8,27 +8,17 @@
 		<!-- full-height-wrap end  -->
 		<div class="full-height-wrap">
 			<div class="swiper-container" id="horizontal-slider" data-mwc="1" data-mwa="0">
-				{%for photo in photos%}
-					<div class="swiper-wrapper">
-						<!--=============== 1 ===============-->
-						<div class="swiper-slide">
-							<div class="bg" style="background-image:url({{media}}{{photo}})"></div>
-							<div class="overlay"></div>
-							<div class="zoomimage"><img src="" class="intense" alt=""><i class="fa fa-expand"></i></div>
-							<div class="slide-title-holder">
-								<div class="slide-title">
-									<h3 class="transition">  <a href="portfolio-single.html">{{album.name}}</a></h3>
-									<h4><a  href="portfolio-single.html">View</a></h4>
-								</div>
-							</div>
+				<div class="swiper-wrapper">
+					<!--=============== 1 ===============-->
+					<div class="swiper-slide">
+						<div class="bg" style="background-image:url({{photo}})"></div>
+						<div class="overlay"></div>
+						<div class="slide-title-holder">
 						</div>
-						<!-- 1 end -->
 					</div>
-				{%endfor%}
+					<!-- 1 end -->
+				</div>
 			</div>
-			<!-- slider  pagination -->
-			<div class="pagination"></div>
-			<!-- pagination  end -->
 		</div>
 		<!-- full-height-wrap end  -->
 	</div>

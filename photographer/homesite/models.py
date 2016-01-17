@@ -16,6 +16,10 @@ class AboutMe(models.Model):
     body = models.TextField()
 
 
+class HomePicture(models.Model):
+    image_home = models.ImageField(upload_to='homesite/')
+
+
 class Home(models.Model):
     company_name = models.CharField(max_length=255, null=True, blank=True)
     company_adress = models.CharField(max_length=255, null=True, blank=True)

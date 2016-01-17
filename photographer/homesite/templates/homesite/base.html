@@ -30,7 +30,8 @@
                 <div class="header-inner">
                     <!-- Logo  -->
                     <div class="logo-holder">
-                        <a href="index.html"><img src="{% static 'images/logo.png' %}" alt=""></a>
+						<p class='name-logo'>Elizabeth Dixon</p>
+                        <!-- <a href="index.html"><img src="{% static 'images/logo.png' %}" alt=""></a> -->
                     </div>
                     <!--Logo end  -->
                     <!--Navigation  -->
@@ -41,7 +42,7 @@
                     <div class="nav-holder">
                         <nav>
                             <ul>
-								<li><a href="{%url 'home'%}" class="act-link">Home</a></li>
+								<li><a href="{%url 'home'%}">Home</a></li>
 								<li><a href="{%url 'portifolio' %}">Portfolio</a></li>
 								<li><a href="{%url 'about_me' %}">About me </a>
                                 </li>
@@ -67,8 +68,8 @@
                 <div class="policy-box">
 					<span>&#169; {{home_information.company_name}}. All rights reserved. </span>
                     <ul>
-                        <li><a href="#">yourmail@domain.com</a></li>
-                        <li><a href="#">+7(111)123456789</a></li>
+						<li><a href="#">{{home_information.email}}</a></li>
+						<li><a href="#">{{home_information.telephone}}</a></li>
                     </ul>
                 </div>
                 <!-- footer social -->

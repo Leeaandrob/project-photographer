@@ -4,7 +4,7 @@ from django.views.generic import (TemplateView, ListView, DetailView,
 from django.core.urlresolvers import reverse_lazy
 
 from .forms import ContactForm
-from .models import (Home, AboutMe, Contact)
+from .models import (Home, AboutMe, Contact, HomePicture)
 from portifolio.models import Album
 
 
@@ -14,10 +14,7 @@ class HomesiteView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super(HomesiteView, self).get_context_data(**kwargs)
         context['home_information'] = Home.objects.first()
-        context['media'] = 'media/'
-        context['photos'] = [photo.values()[0]
-                             for photo in Album.objects.values(
-                                 'album_photos__image')]
+        context['photo'] = HomePicture.objects.first().image_home.url
         return context
 
 

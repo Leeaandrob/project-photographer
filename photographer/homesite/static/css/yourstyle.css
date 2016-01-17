@@ -1,3 +1,35 @@
 /*******************************************************************************
  Add your custom css styles here
  *******************************************************************************/
+
+@font-face {
+	font-family: Dinstant_Stroke; src: url('../../static/fonts/distant_stroke.otf')
+}
+
+@font-face {
+	font-family: Dorsa; src: url('../../static/fonts/Dorsa-Regular.ttf')
+}
+
+@media only screen and (min-width: 880px) and (max-width:1280px){
+	.name-logo {
+		display: block;
+		float: left;
+		font-family:Dinstant_Stroke, sans-serif;
+		font-size: 40px;
+		margin: 15px;
+		margin-left: 17%
+	}
+}
+
+
+@media only screen and (max-width: 880px){
+	.name-logo {
+		display: block;
+		float: left;
+		font-family:Dinstant_Stroke, sans-serif;
+		font-size: 35px;
+		margin: 15px;
+		margin-top: 20px;
+		margin-left: 18%;
+	}
+}
