@@ -3,36 +3,74 @@
 {%block content%}
 <!--=============== content-holder ===============-->
 <div class="content-holder elem scale-bg2 transition3">
+{%if album.type == "1" %}
 	<!--=============== content ===============-->
 	<div class="content full-height">
 		<!-- portfolio  Images  -->
-		<div class="resize-carousel-holder anim-holder">
-			<div id="gallery_horizontal" class="gallery_horizontal">
-				{%for photo in album.album_photos.all%}
-				<!-- gallery Item-->
-				<div class="horizontal_item">
-					<img src="{{photo.image.url}}" alt="">
-					<div class="show-info">
-						<span>Info</span> 
-						<div class="tooltip-info">
-							<h5>Nulla blandit</h5>
-							<p>{{photo.description}}</p>
+		<div class="resize-carousel-holder">
+			<div class="swiper-container viom" id="horizontal-slider" data-mwc="1" data-mwa="0">
+				<div class="swiper-wrapper">
+
+					{%for photo in album.album_photos.all%}
+					<!--=============== 1 ===============-->
+					<div class="swiper-slide">
+						<div class="bg bg-slider">
+							<img src="{{photo.image.url}}" style="width:100%; height:auto;">
+						</div>
+						<div class="show-info">
+							<span>Info</span>
+							<div class="tooltip-info">
+								<h5>Nulla blandit</h5>
+								<p>Aat posuere sem accumsan nec. Sed non arcu non sem commodo ultricies. Sed non nisi viverra </p>
+							</div>
 						</div>
 					</div>
+					<!-- 1 end  -->
+					{%endfor%}
 				</div>
-				<!-- gallery item end-->
-				{%endfor%}
+				<div class="pagination"></div>
 			</div>
-			<!--  navigation -->
-			<div class="customNavigation">
-				<a class="next-slide transition"><i class="fa fa-angle-right"></i></a>
-				<a class="prev-slide transition"><i class="fa fa-angle-left"></i></a>
+			<!-- slider navigation  -->
+			<div class="swiper-nav-holder hor hs">
+				<a class="swiper-nav arrow-left transition " href="#"><i class="fa fa-angle-left"></i></a>
+				<a class="swiper-nav  arrow-right transition" href="#"><i class="fa fa-angle-right"></i></a>
 			</div>
-			<!--  navigation end-->
+			<!-- slider navigation  end -->
 		</div>
-		<!-- portfolio  Images  end-->
+	</div>
+	<!-- Content end  -->
+{%elif album.type == "2" %}
+	<!--=============== content ===============-->
+	<div class="content full-height">
+		<div class="resize-carousel-holder anim-holder">
+				<div id="gallery_horizontal" class="gallery_horizontal">
+					{%for photo in album.album_photos.all%}
+					<!-- gallery Item-->
+					<div class="horizontal_item">
+						<img src="{{photo.image.url}}" alt="">
+						<div class="show-info">
+							<span>Info</span> 
+							<div class="tooltip-info">
+								<h5>Nulla blandit</h5>
+								<p>{{photo.description}}</p>
+							</div>
+						</div>
+					</div>
+					<!-- gallery item end-->
+					{%endfor%}
+				</div>
+				<!--  navigation -->
+				<div class="customNavigation">
+					<a class="next-slide transition"><i class="fa fa-angle-right"></i></a>
+					<a class="prev-slide transition"><i class="fa fa-angle-left"></i></a>
+				</div>
+				<!--  navigation end-->
+			</div>
+	<!-- portfolio  Images  end-->
+
 	</div>
 	<!-- Content end  -->  
+{%endif%}
 	<!-- Share container  -->    
 	<div class="share-container  isShare"  data-share="['facebook','pinterest','googleplus','twitter','linkedin']"></div>
 </div>

@@ -4,10 +4,16 @@ from django.db import models
 
 
 class Album(models.Model):
+    TYPE_ALBUM = (
+        ('1', 'One picture'),
+        ('2', 'Two picture'),
+    )
+
     name = models.CharField(max_length=255)
     description = models.TextField(null=True, blank=True)
     created_at = models.DateTimeField()
     client = models.CharField(max_length=255, null=True, blank=True)
+    type = models.CharField(max_length=255, choices=TYPE_ALBUM, default="1")
 
     def __unicode__(self):
         return self.name
