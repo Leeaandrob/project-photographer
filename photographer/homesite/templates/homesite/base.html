@@ -30,13 +30,14 @@
                 <div class="header-inner">
                     <!-- Logo  -->
                     <div class="logo-holder">
-						<p class='name-logo'>Elizabeth Dixon</p>
-                        <!-- <a href="index.html"><img src="{% static 'images/logo.png' %}" alt=""></a> -->
+						<a href="{%url 'home'%}"
+							<p class='name-logo'>Elizabeth Dixon</p>
+						</a>
                     </div>
                     <!--Logo end  -->
                     <!--Navigation  -->
                     <div class="nav-button-holder">
-                        <div class="nav-button vis-m"><span></span><span></span><span></span></div>
+                        <div class="nav-button vis-m" id="nav-mobile"><span></span><span></span><span></span></div>
                     </div>
                     <div class="show-share isShare">Share</div>
                     <div class="nav-holder">

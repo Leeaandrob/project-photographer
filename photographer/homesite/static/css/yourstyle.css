@@ -11,6 +11,15 @@
 }
 
 @media only screen and (min-width: 880px) and (max-width:1280px){
+
+	.content-desktop-contact {
+		margin-top: 0%;
+	}
+
+	.fixed-desktop-contact {
+		top: 20%;
+	}
+
 	.name-logo {
 		display: block;
 		float: left;
@@ -31,5 +40,35 @@
 		margin: 15px;
 		margin-top: 20px;
 		margin-left: 18%;
+	}
+}
+
+
+@media only screen and (max-width: 650px){
+	.content-mobile-home {
+		left: -3%;
+		top: 4%;
+	}
+
+	.content-mobile-portfolio {
+		margin-top: 30%;
+		margin-left: 12%;
+	}
+
+	.content-mobile-about-me {
+		margin-top: 0%;
+	}
+
+	.fixed-mobile-about-me {
+		top:30%;
+	}
+
+	.content-mobile-contact {
+		margin-top: auto;
+	}
+
+	.fixed-mobile-contact {
+		top: 20%;
+		height: 70%;
 	}
 }
