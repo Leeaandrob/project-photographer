@@ -59,3 +59,4 @@ target/
 
 #tempfile
 temp
+.DS_Store
