@@ -682,12 +682,6 @@ section {
 	left:0;
 	width:100%;
 }
-.arrow-left {
-	left: -4%;
-	position: absolute;
-	margin-top: 25%;
-	font-size: 50px;
-}
 
 .arrow-right {
 	right: -4%;
@@ -2324,19 +2318,49 @@ figure img {
 }
 /*------ share------------------------------------------------*/
 @media only screen and (min-width: 880px) and (max-width:1280px){
-	.arrow-left {
+	.customNavigation {
+		position:absolute;
+		top:50%;
+		right:-45px;
+		width:40px;
+		z-index:5;
+		height:80px;
+		margin-top:-40px;
+	}
+
+	.arrowNavigation {
+		position: absolute;
+		width: 100px;
+		height: 100px;
+		right: 103%;
+		font-size: 50px;
+		left: 50%;
+	}
+
+	.arrow-left-2 {
+		left: 9em;
+		top: 4.5em;
+	}
+
+	.arrow-right-2 {
+		right: 11em;
+		top: 4.5em;
+	}
+
+	.arrow-left-1 {
 		left: -4%;
 		position: absolute;
 		margin-top: 25%;
 		font-size: 50px;
 	}
 
-	.arrow-right {
+	.arrow-right-1 {
 		right: -4%;
 		position: absolute;
 		margin-top: 25%;
 		font-size: 50px;
 	}
+
 	.show-share {
 		margin-right:13%;
 		float:right;

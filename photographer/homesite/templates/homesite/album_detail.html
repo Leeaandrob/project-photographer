@@ -7,7 +7,7 @@
 	<!--=============== content ===============-->
 	<div class="content full-height">
 		<!-- portfolio  Images  -->
-		<div class="resize-carousel-holder">
+		<div class="resize-carousel-holder fix-image">
 			<div class="swiper-container viom" id="horizontal-slider" data-mwc="1" data-mwa="0">
 				<div class="swiper-wrapper">
 
@@ -26,8 +26,8 @@
 			<!-- slider navigation  -->
 			<!-- <div class="swiper-nav-holder hor hs"> -->
 			<div class="swiper-nav-holder hor">
-				<a class="swiper-nav arrow-left transition " href="#"><i class="fa fa-angle-left"></i></a>
-				<a class="swiper-nav  arrow-right transition" href="#"><i class="fa fa-angle-right"></i></a>
+				<a class="swiper-nav arrow-left-1 transition " href="#"><i class="fa fa-angle-left"></i></a>
+				<a class="swiper-nav  arrow-right-1 transition" href="#"><i class="fa fa-angle-right"></i></a>
 			</div>
 			<!-- slider navigation  end -->
 		</div>
@@ -42,21 +42,13 @@
 					<!-- gallery Item-->
 					<div class="horizontal_item">
 						<img src="{{photo.image.url}}" alt="">
-						<div class="show-info">
-							<span>Info</span> 
-							<div class="tooltip-info">
-								<h5>Nulla blandit</h5>
-								<p>{{photo.description}}</p>
-							</div>
-						</div>
 					</div>
 					<!-- gallery item end-->
 					{%endfor%}
 				</div>
-				<!--  navigation -->
-				<div class="customNavigation">
-					<a class="next-slide transition"><i class="fa fa-angle-right"></i></a>
-					<a class="prev-slide transition"><i class="fa fa-angle-left"></i></a>
+				<div class="arrowNavigation">
+					<a class="next-slide transition arrow-left-2"><i class="fa fa-angle-right"></i></a>
+					<a class="prev-slide transition arrow-right-2"><i class="fa fa-angle-left"></i></a>
 				</div>
 				<!--  navigation end-->
 			</div>
