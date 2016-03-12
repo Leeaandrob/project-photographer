@@ -12,6 +12,14 @@
 
 @media only screen and (min-width: 880px) and (max-width:1280px){
 
+	.override-full-height {
+		left:6%;
+	}
+
+	.resize-carousel-holder-override {
+		width: 90%;
+	}
+
 	.fix-image {
 		left: 3%;
 		width: 90%;
@@ -32,6 +40,23 @@
 		font-size: 40px;
 		margin: 15px;
 		margin-left: 17%
+	}
+
+	.override-arrow-left {
+		position: absolute;
+		float: left;
+		font-size: 4em;
+		right: 17em;
+		top: 4.4em;
+	}
+
+	.override-arrow-right {
+		display: block;
+		float: left;
+	}
+
+	.override-hs {
+		position: inherit;
 	}
 }
 
@@ -75,5 +100,9 @@
 	.fixed-mobile-contact {
 		top: 20%;
 		height: 70%;
+	}
+
+	.fix-problem-height {
+		bottom: 25%;
 	}
 }
