@@ -34,7 +34,7 @@ LOGGING = {
         # Log to a text file that can be rotated by logrotate
         'logfile': {
             'class': 'logging.handlers.WatchedFileHandler',
-            'filename': '/home/webapps/elizabethapp/logs/elizabeth.log'
+            'filename': '/home/elizabeth/photographer/logs/elizabeth.log'
         },
     },
     'loggers': {
@@ -65,4 +65,4 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = 'tracebackufit@gmail.com'
 EMAIL_HOST_PASSWORD = 'tracebackufit123456'
 
-MEDIA_ROOT = os.path.join('/home/webapps/', 'media')
+MEDIA_ROOT = os.path.join('/home/elizabeth/', 'media')
