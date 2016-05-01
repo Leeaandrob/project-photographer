@@ -60,3 +60,4 @@ target/
 #tempfile
 temp
 .DS_Store
+db.sqlite3
