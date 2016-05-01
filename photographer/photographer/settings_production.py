@@ -66,3 +66,4 @@ EMAIL_HOST_USER = 'tracebackufit@gmail.com'
 EMAIL_HOST_PASSWORD = 'tracebackufit123456'
 
 MEDIA_ROOT = os.path.join('/home/elizabeth/', 'media')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
