@@ -6,62 +6,62 @@
 {%if album.type == "1" %}
 
     <!--=============== content ===============-->
-                    <div class="content full-height override-full-height">
-                        <!-- portfolio  Images  -->
-                        <div class="resize-carousel-holder anim-holder fix-problem-height resize-carousel-holder-override">
-                            <div class="swiper-container" id="horizontal-slider" data-mwc="1" data-mwa="0">
-                                <div class="swiper-wrapper">
-									{%for photo in album.album_photos.all%}
-                                    <!--=============== 1 ===============-->
-                                    <div class="swiper-slide">
-										<div class="bg bg-slider" style="background-image:url({{photo.image.url}})"></div>
-                                        <div class="show-info">
-                                            <div class="tooltip-info">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- 1 end  -->
-									{%endfor%}
-                                </div>
-                                <div class="pagination"></div>
-                            </div>
-
-							<!-- slider navigation  -->
-							<div class="swiper-nav-holder hor">
-								<a class="swiper-nav arrow-left override-arrow-left transition" href="#">
-									<i class="fa fa-angle-left"></i></a>
-								<a class="swiper-nav  arrow-right override-arrow-right transition" href="#">
-									<i class="fa fa-angle-right"></i></a>
+	<div class="content full-height override-full-height" id="contentAlbum">
+		<!-- portfolio  Images  -->
+		<div class="resize-carousel-holder anim-holder fix-problem-height resize-carousel-holder-override">
+			<div class="swiper-container" id="horizontal-slider" data-mwc="1" data-mwa="0">
+				<div class="swiper-wrapper">
+					{%for photo in album.album_photos.all%}
+					<!--=============== 1 ===============-->
+					<div class="swiper-slide">
+						<div class="bg bg-slider" style="background-image:url({{photo.image.url}})"></div>
+						<div class="show-info">
+							<div class="tooltip-info">
 							</div>
-							<!-- slider navigation  end -->
 						</div>
 					</div>
-					<!-- Content end  -->
-
-	{%elif album.type == "2" %}
-		<!--=============== content ===============-->
-		<div class="content full-height">
-			<div class="resize-carousel-holder anim-holder">
-				<div id="gallery_horizontal" class="gallery_horizontal">
-					{%for photo in album.album_photos.all%}
-					<!-- gallery Item-->
-					<div class="horizontal_item">
-						<img src="{{photo.image.url}}" alt="">
-					</div>
-					<!-- gallery item end-->
+					<!-- 1 end  -->
 					{%endfor%}
 				</div>
-
-				<div class="arrowNavigation">
-					<a class="next-slide transition arrow-left-2"><i class="fa fa-angle-right"></i></a>
-					<a class="prev-slide transition arrow-right-2"><i class="fa fa-angle-left"></i></a>
-				</div>
-				<!--  navigation end-->
+				<div class="pagination"></div>
 			</div>
-			<!-- portfolio  Images  end-->
+
+			<!-- slider navigation  -->
+			<div class="swiper-nav-holder hor">
+				<a class="swiper-nav arrow-left override-arrow-left transition" href="#">
+					<i class="fa fa-angle-left"></i></a>
+				<a class="swiper-nav  arrow-right override-arrow-right transition" href="#">
+					<i class="fa fa-angle-right"></i></a>
+			</div>
+			<!-- slider navigation  end -->
 		</div>
-		<!-- Content end  -->
-	{%endif%}
+	</div>
+	<!-- Content end  -->
+
+{%elif album.type == "2" %}
+<!--=============== content ===============-->
+<div class="content full-height">
+	<div class="resize-carousel-holder anim-holder">
+		<div id="gallery_horizontal" class="gallery_horizontal">
+			{%for photo in album.album_photos.all%}
+			<!-- gallery Item-->
+			<div class="horizontal_item">
+				<img src="{{photo.image.url}}" alt="">
+			</div>
+			<!-- gallery item end-->
+			{%endfor%}
+		</div>
+
+		<div class="arrowNavigation">
+			<a class="next-slide transition arrow-left-2"><i class="fa fa-angle-right"></i></a>
+			<a class="prev-slide transition arrow-right-2"><i class="fa fa-angle-left"></i></a>
+		</div>
+		<!--  navigation end-->
+	</div>
+	<!-- portfolio  Images  end-->
+</div>
+<!-- Content end  -->
+{%endif%}
 	<!-- Share container  -->
 	<div class="share-container  isShare"  data-share="['facebook','pinterest','googleplus','twitter','linkedin']"></div>
 </div>

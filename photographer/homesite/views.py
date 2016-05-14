@@ -41,6 +41,10 @@ class AlbumDetailView(DetailView):
         return context
 
 
+class AlbumDetailMobileView(AlbumDetailView):
+    template_name = 'homesite/album_detail_mobile.html'
+
+
 class AboutMeView(TemplateView):
     template_name = 'homesite/about_me.html'
 

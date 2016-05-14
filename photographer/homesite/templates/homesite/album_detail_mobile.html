@@ -1,0 +1,31 @@
+{%extends 'homesite/base.html'%}
+{%load staticfiles%}
+{%block content%}
+<!--=============== content-holder ===============-->
+<div class="content-holder elem scale-bg2 transition3">
+<!--=============== content ===============-->
+<div class="content full-height">
+	<div class="resize-carousel-holder anim-holder">
+		<div id="gallery_horizontal" class="gallery_horizontal">
+			{%for photo in album.album_photos.all%}
+			<!-- gallery Item-->
+			<div class="horizontal_item">
+				<img src="{{photo.image.url}}" alt="">
+			</div>
+			<!-- gallery item end-->
+			{%endfor%}
+		</div>
+
+		<div class="arrowNavigation">
+			<a class="next-slide transition arrow-left-2"><i class="fa fa-angle-right"></i></a>
+			<a class="prev-slide transition arrow-right-2"><i class="fa fa-angle-left"></i></a>
+		</div>
+		<!--  navigation end-->
+	</div>
+	<!-- portfolio  Images  end-->
+</div>
+<!-- Content end  -->
+	<!-- Share container  -->
+	<div class="share-container  isShare"  data-share="['facebook','pinterest','googleplus','twitter','linkedin']"></div>
+</div>
+{%endblock%}
