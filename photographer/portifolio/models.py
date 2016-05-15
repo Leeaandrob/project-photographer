@@ -33,7 +33,7 @@ class Photo(models.Model):
 
     def thumb(self):
         if self.image:
-            return u'<img src="%s" width=60 height=60 />' % (self.image.url)
+            return u'<img src="http://edixonphotography.com/%s" width=60 height=60 />' % (self.image.url)
         else:
             return u'No image file found'
     thumb.short_description = ('Thumbnail')
