@@ -291,6 +291,13 @@ blockquote p {
 	position: absolute;
 	left: 3%;
 }
+
+.full-height-wrapper {
+	height:100%;
+	position: absolute;
+	left: 33%;
+}
+
 .wrapper-inner {
 	float:left;
 	width:70%;
@@ -695,13 +702,13 @@ section {
 	left:32px !important;
 	color:#fff;
 	position:absolute;
-	font-size:18px;
+	font-size:5em;
 }
 .parallax-nav.swiper-nav-holder .arrow-right {
  	color:#fff;
 	right:32px !important;
 	position:absolute;
-	font-size:18px;
+	font-size:5em;
 }
 
 .hs a {

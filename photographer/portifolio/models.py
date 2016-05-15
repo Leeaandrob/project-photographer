@@ -10,6 +10,7 @@ class Album(models.Model):
     TYPE_ALBUM = (
         ('1', 'One picture'),
         ('2', 'Two picture'),
+        ('3', 'Full View'),
     )
 
     name = models.CharField(max_length=255)
@@ -35,7 +36,7 @@ class Photo(models.Model):
 
     def thumb(self):
         if self.image:
-            path = u'<img src="http://edixonphotography.com%s" width=60 height=60 />' % (self.image.url)
+            path = u'<img src="http://edixonphotography.com%s" width=320 height=180 />' % (self.image.url)
             return mark_safe(path)
         else:
             return u'No image file found'
