@@ -1,6 +1,10 @@
 appnope==0.1.0
 decorator==4.0.4
 Django==1.9.1
+django-appconf==1.0.1
+django-image-cropping==1.0.3
+django-mobile==0.7.0
+easy-thumbnails==2.3
 gnureadline==6.3.3
 ipython==4.0.1
 ipython-genutils==0.1.0
@@ -11,5 +15,5 @@ Pillow==3.0.0
 psycopg2==2.6.1
 ptyprocess==0.5
 simplegeneric==0.8.1
+six==1.10.0
 traitlets==4.0.0
-uwsgi
