@@ -27,7 +27,7 @@ class Photo(models.Model):
     name = models.CharField(max_length=255)
     description = models.TextField()
     image = models.ImageField(upload_to="images")
-    cropping = ImageRatioField('image', '430x360')
+    # cropping = ImageRatioField('image', '430x360')
     album = models.ForeignKey('Album', related_name='album_photos')
     index = models.IntegerField()
 
