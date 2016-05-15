@@ -50,8 +50,8 @@ class AboutMeView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(AboutMeView, self).get_context_data(**kwargs)
-        context['body'] = AboutMe.objects.first().body
-        if AboutMe.objects.first():
+        if AboutMe.objects.count() > 0:
+            context['body'] = AboutMe.objects.first().body
             context['image'] = AboutMe.objects.first().picture.url
         return context
 

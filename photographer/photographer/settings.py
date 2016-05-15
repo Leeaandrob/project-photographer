@@ -28,6 +28,9 @@ INSTALLED_APPS = [
     'photographer',
     'homesite',
     'portifolio',
+
+    "easy_thumbnails",
+    "image_cropping",
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -112,3 +115,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
+
+from easy_thumbnails.conf import Settings as thumbnail_settings
+THUMBNAIL_PROCESSORS = (
+    'image_cropping.thumbnail_processors.crop_corners',
+
+) + thumbnail_settings.THUMBNAIL_PROCESSORS
