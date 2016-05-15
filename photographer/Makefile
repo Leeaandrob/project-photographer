@@ -13,3 +13,5 @@ clean:
 migrations: clean
 	python manage.py makemigrations
 
+user:
+	python manage.py createsuperuser
