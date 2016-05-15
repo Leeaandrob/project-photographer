@@ -6,7 +6,7 @@ from .models import (Album, Photo)
 
 
 class PhotoAdmin(ImageCroppingMixin, admin.ModelAdmin):
-    list_display = ["name", "album__name", "thumb"]
+    list_display = ["name", "thumb"]
 
 admin.site.register(Album)
 admin.site.register(Photo, PhotoAdmin)

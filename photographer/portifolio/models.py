@@ -1,6 +1,7 @@
 from __future__ import unicode_literals
 
 from django.db import models
+from django.utils.safestring import mark_safe
 
 from image_cropping import ImageRatioField
 
@@ -33,7 +34,8 @@ class Photo(models.Model):
 
     def thumb(self):
         if self.image:
-            return u'<img src="http://edixonphotography.com%s" width=60 height=60 />' % (self.image.url)
+            path = u'<img src="http://edixonphotography.com%s" width=60 height=60 />' % (self.image.url)
+            return mark_safe(path)
         else:
             return u'No image file found'
     thumb.short_description = ('Thumbnail')
