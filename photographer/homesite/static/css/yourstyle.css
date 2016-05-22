@@ -75,7 +75,7 @@
   list-style-type: none;
 }
 
-.li-galery > img {
+.li-galery > a >img {
   float: left;
   margin: 10px;
   border: 5px solid #fff;
