@@ -63,37 +63,20 @@
 <!-- Content end  -->
 
 {%elif album.type == "3"%}
-
-<!-- <img src="{{photo.image.url}}" style="display: block; max-width: 100%; height: auto;"/> -->
-
-    <!--=============== content ===============-->
-	<div class="content full-height override-full-height" id="contentAlbum">
-		<!-- portfolio  Images  -->
-		<div class="resize-carousel-holder anim-holder fix-problem-height resize-carousel-holder-override">
-			<div class="swiper-container" id="horizontal-slider" data-mwc="1" data-mwa="0">
-				<div class="swiper-wrapper">
-					{%for photo in album.album_photos.all%}
-					<!--=============== 1 ===============-->
-						<div class="swiper-slide">
-							<img src="{{photo.image.url}}" style="display: block; max-width: 100%; height: auto; margin:0 auto;"/>
-						</div>
-					<!-- 1 end  -->
-					{%endfor%}
-				</div>
-				<div class="pagination"></div>
-			</div>
-
-			<!-- slider navigation  -->
-			<div class="swiper-nav-holder hor">
-				<a class="swiper-nav arrow-left override-arrow-left transition" href="#">
-					<i class="fa fa-angle-left"></i></a>
-				<a class="swiper-nav  arrow-right override-arrow-right transition" href="#">
-					<i class="fa fa-angle-right"></i></a>
-			</div>
-			<!-- slider navigation  end -->
-		</div>
-	</div>
-	<!-- Content end  -->
+<!--=============== content ===============-->
+<div class="content">
+<div class="galeryThumb">
+	<ul class="ul-galery">
+		{%for photo in albums%}
+		<li class="li-galery">
+			<a href="{{photo.image.url}}" data-lightbox="roadtrip" data-title="{{photo.description}}">
+				<img src="{{photo.image.url}}"/ width="150px" height="150px">
+			</a>
+		</li>
+		{%endfor%}
+	</ul>
+</div>
+</div>
 {%endif%}
 	<!-- Share container  -->
 	<div class="share-container  isShare"  data-share="['facebook','pinterest','googleplus','twitter','linkedin']"></div>

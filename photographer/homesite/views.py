@@ -38,6 +38,8 @@ class AlbumDetailView(DetailView):
     def get_context_data(self, **kwargs):
         context = super(AlbumDetailView, self).get_context_data(**kwargs)
         context['home_information'] = Home.objects.first()
+        context["albums"] = context['album'].album_photos.all().order_by(
+            'index')
         return context
 
 
