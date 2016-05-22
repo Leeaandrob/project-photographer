@@ -52,6 +52,8 @@ class AboutMeView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(AboutMeView, self).get_context_data(**kwargs)
+        context['home_information'] = Home.objects.first()
+
         if AboutMe.objects.count() > 0:
             context['body'] = AboutMe.objects.first().body
             context['image'] = AboutMe.objects.first().picture.url
@@ -65,6 +67,7 @@ class ContactView(FormView):
 
     def get_context_data(self, **kwargs):
         context = super(ContactView, self).get_context_data(**kwargs)
+        context['home_information'] = Home.objects.first()
         context['body'] = AboutMe.objects.first()
         context['company'] = Home.objects.first()
         if ContactPicture.objects.first():
